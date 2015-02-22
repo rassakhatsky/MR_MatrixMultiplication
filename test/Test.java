@@ -1,5 +1,3 @@
-package edu.stevens.bia678.matrix.test;
-
 import edu.stevens.bia678.matrix.MatrixMultiplicator;
 
 import java.io.IOException;

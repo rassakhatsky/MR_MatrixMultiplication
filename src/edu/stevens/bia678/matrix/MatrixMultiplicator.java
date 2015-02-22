@@ -1,6 +1,5 @@
 package edu.stevens.bia678.matrix;
 
-
 import org.apache.hadoop.conf.Configuration;
 import org.apache.hadoop.fs.Path;
 import org.apache.hadoop.io.LongWritable;
@@ -31,9 +30,16 @@ public class MatrixMultiplicator {
         Job job;
 
         // TODO сделать нормальную поодержку матриц любого размера
-        x = args[0].substring(args[0].lastIndexOf("_") + 1, args[0].lastIndexOf("."));
-        y = x;
-        z = x;
+        if (args.length==2){
+            x = args[0].substring(args[0].lastIndexOf("_") + 1, args[0].lastIndexOf("."));
+            y = x;
+            z = x;
+        } else {
+            x=args[2];
+            y=args[3];
+            z=args[4];
+        }
+
 
         // We multiply 2 matricies X-Y to Y-Z
         conf = new Configuration();
@@ -42,8 +48,7 @@ public class MatrixMultiplicator {
         conf.set(Z, z);
 
         job = Job.getInstance(conf);
-        job.setJobName("MatrixMatrixMultiplicationOneStep");
-        //Job job = new Job(conf, "MatrixMatrixMultiplicationOneStep");
+        job.setJobName("Multiply Matrices");
         job.setJarByClass(MatrixMultiplicator.class);
         job.setOutputKeyClass(Text.class);
         job.setOutputValueClass(Text.class);

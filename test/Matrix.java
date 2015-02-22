@@ -1,5 +1,3 @@
-package edu.stevens.bia678.matrix.test;
-
 import java.io.*;
 
 /**
@@ -8,8 +6,8 @@ import java.io.*;
 public class Matrix {
     static String m1 = "matrix1";
     static String m2 = "matrix2";
-    static String FS_FOLDER = "/home/cloudera/Desktop/TempJavaProject/src/edu/stevens/bia678/matrix/files/";
-    static int MAX_COLUMNS = 50;
+    static String FS_FOLDER = "/Users/rassakhatsky/OneDrive/DEV/Java/IDEA/MR_MatrixMultiplication/test/";
+    static int MAX_COLUMNS = 250;
 
     private double[][] matrix;
 
@@ -17,7 +15,12 @@ public class Matrix {
     private int height;
 
     public static void main(String[] args) {
-        for (int i = 3; i < MAX_COLUMNS; i++) {
+        /**
+        for (int i = 3; i < 10; i++) {
+            String matrixName = "matrix_" + i + ".txt";
+            createRandomMatrix(FS_FOLDER, matrixName, i, i, i);
+        }*/
+        for (int i = 25; i < MAX_COLUMNS; i=i+25) {
             String matrixName = "matrix_" + i + ".txt";
             createRandomMatrix(FS_FOLDER, matrixName, i, i, i);
         }
