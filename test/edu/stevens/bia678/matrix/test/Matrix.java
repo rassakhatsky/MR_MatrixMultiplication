@@ -1,4 +1,4 @@
-package edu.stevens.bia678.matrix;
+package edu.stevens.bia678.matrix.test;
 
 import java.io.*;
 
